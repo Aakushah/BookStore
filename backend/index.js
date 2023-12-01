@@ -13,17 +13,17 @@ const app=express();
 //middleware for parsing request body
 app.use(express.json())
 
-//middleware for handling CORS policy
-//option 1:allow all origin with default of cors(*)
+// middleware for handling CORS policy
+// option 1:allow all origin with default of cors(*)
 app.use(cors())
 //Option 2:allow custom origins
-app.use(
-    cors({
-        origin:'http://localhost:/4000',
-        methods:['GET','PUT','DELETE','CREATE'],
-        allowedHeaders:['Content-type'],
-    })
-);
+// app.use(
+//     cors({
+//         origin:'http://localhost:/4000',
+//         methods:['GET','PUT','DELETE','CREATE'],
+//         allowedHeaders:['Content-type'],
+//     })
+// );
 
 app.get('/',(req,res)=>{
     res.send("<H1>HELLO</H1>")
